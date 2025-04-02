@@ -1,0 +1,12 @@
+.nav-link {
+    color: black !important;
+}
+
+.nav-link.active {
+    background-color: #ffc107 !important;
+    color: white !important;
+}
+
+.btn-warning {
+    --bs-btn-color: white;
+}
