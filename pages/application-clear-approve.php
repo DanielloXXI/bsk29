@@ -25,7 +25,7 @@ $id_user = $_SESSION['id_user'];
             <div class="mb-2 mb-md-0">
                 <a href="./index.php" class="d-inline-flex link-body-emphasis text-decoration-none align-items-center">
                     <img src="../media/logo.png" alt="Лого" width="60">
-                    <span class="fs-4 ms-2">Беломорская сплавная компания</span>
+                    <span class="fs-4 ms-2 header__text">Беломорская сплавная компания</span>
                 </a>
             </div>
             <ul class="nav mb-2 justify-content-center mb-md-0">

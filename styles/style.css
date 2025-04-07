@@ -10,3 +10,9 @@
 .btn-warning {
     --bs-btn-color: white;
 }
+
+@media screen and (max-width: 600px) {
+    .header__text {
+        display: none;
+    }
+}
