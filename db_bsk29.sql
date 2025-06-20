@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: MySQL-8.2
--- Время создания: Апр 03 2025 г., 01:35
+-- Время создания: Июн 20 2025 г., 19:19
 -- Версия сервера: 8.2.0
 -- Версия PHP: 8.1.28
 
@@ -40,6 +40,15 @@ CREATE TABLE `applications` (
   `quantity` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+--
+-- Дамп данных таблицы `applications`
+--
+
+INSERT INTO `applications` (`id_application`, `id_user`, `address`, `tel`, `status`, `date`, `serviceType`, `reason`, `payment`, `quantity`) VALUES
+(18, 14, 'Морской порт 2', '+79000000000', 'выполнена', '2025-04-12 01:27:00', 'Берёза', NULL, 'банковская карта', 4),
+(19, 14, 'awdawd', '+79581678587', 'в работе', '2025-05-31 03:07:00', 'Берёза', NULL, 'банковская карта', 2),
+(20, 14, 'Дачная 52', '+79581678587', 'в работе', '2025-06-28 23:44:00', 'Берёза', NULL, 'наличные', 5);
+
 -- --------------------------------------------------------
 
 --
@@ -68,6 +77,27 @@ INSERT INTO `users` (`id_user`, `login`, `password`, `tel`, `email`, `FIO`) VALU
 (13, 'ggsel222', 'fbf6e04c950646054e0333f7a15345eefc7f411dd0bb3a436a12f4bca4592fdb', '+79581678582', 'ggsel222@mail.ru', 'Даниил '),
 (14, 'cybiran', '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8', '+79581678587', 'cybiran_ez@mail.ru', 'Даниил');
 
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `wood`
+--
+
+CREATE TABLE `wood` (
+  `id_wood` int NOT NULL,
+  `wood` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Дамп данных таблицы `wood`
+--
+
+INSERT INTO `wood` (`id_wood`, `wood`) VALUES
+(1, 'Дуб'),
+(2, 'Сосна'),
+(3, 'Берёза'),
+(4, 'Ель');
+
 --
 -- Индексы сохранённых таблиц
 --
@@ -87,6 +117,12 @@ ALTER TABLE `users`
   ADD KEY `login` (`login`);
 
 --
+-- Индексы таблицы `wood`
+--
+ALTER TABLE `wood`
+  ADD PRIMARY KEY (`id_wood`);
+
+--
 -- AUTO_INCREMENT для сохранённых таблиц
 --
 
@@ -94,13 +130,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `applications`
 --
 ALTER TABLE `applications`
-  MODIFY `id_application` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_application` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
   MODIFY `id_user` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- AUTO_INCREMENT для таблицы `wood`
+--
+ALTER TABLE `wood`
+  MODIFY `id_wood` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц
