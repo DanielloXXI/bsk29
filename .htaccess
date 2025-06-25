@@ -1,2 +1,13 @@
-RewriteEngine On
-RewriteRule ^(.*)$ public/$1 [L]
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Перенаправление из корня сайта (/) на /pages/main.php
+    RewriteRule ^/?$ /pages/main.php [L]
+
+    # Добавляем условие, чтобы не перезаписывать requests к файлам внутри /pages
+    RewriteCond %{REQUEST_URI} !^/pages/
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ /pages/$1 [L]
+
+</IfModule>
