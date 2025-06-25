@@ -31,6 +31,7 @@ $id_user = $_SESSION['id_user'];
                 </a>
             </div>
             <ul class="nav mb-2 justify-content-center mb-md-0">
+                <li><a href="../pages/review.php" class="btn btn-outline-warning me-1" title="Мои заявки">Оставить отзыв</a></li>
                 <li><a href="../pages/index.php" class="btn btn-warning me-1" title="Мои заявки">Мои заявки</a></li>
                 <li><a href="../server/logout.php" class="btn btn-outline-warning" title='Выйти из аккаунта'>Выход</a></li>
             </ul>
