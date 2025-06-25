@@ -7,6 +7,11 @@ if (!array_key_exists('admin', $_SESSION)) {
     header('Location: ' . '../pages/index.php');
 }
 include("../server/connect.php");
-$query = "DELETE FROM applications WHERE status LIKE 'отменена' OR status LIKE 'выполнена'";
+if ($_POST['reviews']) {
+    $query = "DELETE FROM reviews WHERE status LIKE 'удалён'";
+} else {
+    $query = "DELETE FROM applications WHERE status LIKE 'отменена' OR status LIKE 'выполнена'";
+}
+
 mysqli_query($mysql, $query);
 header('Location: ' . '../pages/admin.php');

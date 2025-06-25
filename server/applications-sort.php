@@ -26,7 +26,7 @@ function applicationsSort($status)
                         <p class="card-text">
                             Адрес: %s<br>
                             %s<br>
-                            %s кубических сантиметров<br>
+                            %s кубических см<br>
                             Фио: %s<br>
                             Тел: %s<br>
                             email: %s<br>
@@ -93,7 +93,7 @@ function applicationsSort($status)
                         <p class="card-text">
                             Адрес: %s<br>
                             %s<br>
-                            %s кубических сантиметров<br>
+                            %s кубических см<br>
                             Фио: %s<br>
                             Тел: %s<br>
                             email: %s<br>
