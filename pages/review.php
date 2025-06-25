@@ -39,26 +39,20 @@ $id_user = $_SESSION['id_user'];
         <main class="main">
             <div class="col-12 col-md-6 mx-auto">
                 <div class="card">
-                    <div class="card-header d-flex align-items-center">
-                        <span class="h4 mb-0">Оставить отзыв</span>
-                    </div>
-                    <div class="card-body">
-                        <form action="../server/review.php" class="d-flex flex-column" method="post">
-                            <label for="text" class="d-block">Опишите свой опыт</label>
-                            <textarea id="text" name="text"></textarea>
-                            <label for="mark" class="d-block">Поставьте оценку</label>
-                            <select name="mark" id="mark" class="mb-2">
-                                <option value="1">1</option>
-                                <option value="1">2</option>
-                                <option value="1">3</option>
-                                <option value="1">4</option>
-                                <option value="1">5</option>
-                            </select>
-                            <input type="submit" class="d-block" value="Отправить">
-                        </form>
-                    </div>
-
-
+                    <form action="../server/review.php" class="border border-1 rounded p-4 needs-validation" name="review" novalidate method="post">
+                        <h2 class="mb-3">Оставить отзыв</h2>
+                        <label for="text" class="d-block">Опишите свой опыт</label>
+                        <textarea id="text" name="text" class="form-control"></textarea>
+                        <label for="mark" class="d-block">Поставьте оценку</label>
+                        <select name="mark" id="mark" class="mb-2 form-select">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                        <button type="submit" class="btn btn-warning">Отправить</button>
+                    </form>
                 </div>
             </div>
         </main>

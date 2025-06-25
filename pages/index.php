@@ -31,7 +31,7 @@ $id_user = $_SESSION['id_user'];
                 </a>
             </div>
             <ul class="nav mb-2 justify-content-center mb-md-0">
-                <li><a href="../pages/review.php" class="btn btn-outline-warning me-1" title="Мои заявки">Оставить отзыв</a></li>
+                <li><a href="../pages/review.php" class="btn btn-outline-warning me-1" title="Оставить отзыв">Оставить отзыв</a></li>
                 <li><a href="../pages/index.php" class="btn btn-warning me-1" title="Мои заявки">Мои заявки</a></li>
                 <li><a href="../server/logout.php" class="btn btn-outline-warning" title='Выйти из аккаунта'>Выход</a></li>
             </ul>
@@ -76,6 +76,14 @@ ORDER BY `user_applications`.`date` DESC";
 
                 </div>
             </div>
+                    <?php
+        if (array_key_exists('response', $_SESSION)) {
+            echo <<< HERE
+                            <div class='alert alert-danger py-2 mt-2'>{$_SESSION['response']}</div>       
+                        HERE;
+        }
+        unset($_SESSION["response"]);
+        ?>
         </main>
     </div>
     <script src="../bootstrap-5.3.7-dist/js/bootstrap.js"></script>

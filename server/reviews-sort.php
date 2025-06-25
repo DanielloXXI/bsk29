@@ -17,28 +17,36 @@ function reviewsSort($status)
                     <div class="card-body">
                         <h5 class="card-title">%s</h5>
                         <p class="card-text">
+                            %s⭐
+                        </p>
+                        <p class="card-text">
                             %s
                         </p>
-                        <form action="../server/application-change-status.php" method="post" class="d-flex justify-content-between flex-wrap gap-3 needs-validation" novalidate>
+                        <p class="card-text">
+                            %s
+                        </p>
+                        <form action="../server/reviews-change-status.php" method="post" class="d-flex justify-content-between flex-wrap gap-3 needs-validation" novalidate>
                             <div>
                                 <select class="form-select" name="status" id="" style="width: 170px;" required>
                                     <option value="" disabled selected></option>
-                                    <option value="в работе">На рассмотрении</option>
-                                    <option value="выполнена">Одобрен</option>
-                                    <option value="отменена">Удалён</option>
+                                    <option value="на рассмотрении">на рассмотрении</option>
+                                    <option value="одобрен">одобрен</option>
+                                    <option value="удалён">удалён</option>
                                 </select>
                                 <div class="invalid-feedback">
                                     Выберите один из пунктов
                                 </div>
                             </div>
                             <button type="submit" class="btn btn-dark h-100" style="opacity:0.7">Изменить статус</button>
-                            <input type="hidden" name="id_application" value="%s">
+                            <input type="hidden" name="id_reviews" value="%s">
                         </form>
                     </div>
                     <hr>
                     ',
-                    $associativeArray['name'],
+                    $associativeArray['FIO'],
+                    $associativeArray['mark'],
                     $associativeArray['text'],
+                    $associativeArray['status'],
                     $associativeArray['id_reviews']
                 );
             }
@@ -61,28 +69,36 @@ function reviewsSort($status)
                     <div class="card-body">
                         <h5 class="card-title">%s</h5>
                         <p class="card-text">
+                            %s⭐
+                        </p>
+                        <p class="card-text">
                             %s
                         </p>
-                        <form action="../server/application-change-status.php" method="post" class="d-flex justify-content-between flex-wrap gap-3 needs-validation" novalidate>
+                        <p class="card-text">
+                            %s
+                        </p>
+                        <form action="../server/reviews-change-status.php" method="post" class="d-flex justify-content-between flex-wrap gap-3 needs-validation" novalidate>
                             <div>
                                 <select class="form-select" name="status" id="" style="width: 170px;" required>
                                     <option value="" disabled selected></option>
-                                    <option value="в работе">На рассмотрении</option>
-                                    <option value="выполнена">Одобрен</option>
-                                    <option value="отменена">Удалён</option>
+                                    <option value="на рассмотрении">на рассмотрении</option>
+                                    <option value="одобрен">одобрен</option>
+                                    <option value="удалён">удалён</option>
                                 </select>
                                 <div class="invalid-feedback">
                                     Выберите один из пунктов
                                 </div>
                             </div>
                             <button type="submit" class="btn btn-dark h-100" style="opacity:0.7">Изменить статус</button>
-                            <input type="hidden" name="id_application" value="%s">
+                            <input type="hidden" name="id_reviews" value="%s">
                         </form>
                     </div>
                     <hr>
                     ',
-                    $associativeArray['name'],
+                    $associativeArray['FIO'],
+                    $associativeArray['mark'],
                     $associativeArray['text'],
+                    $associativeArray['status'],
                     $associativeArray['id_reviews']
                 );
             }

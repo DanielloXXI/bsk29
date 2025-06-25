@@ -43,7 +43,7 @@ $id_user = $_SESSION['id_user'];
                         <form action="../server/clear.php" method="post" class="d-flex justify-content-between flex-wrap gap-3 needs-validation" novalidate>
                             <button class="btn btn-danger" type="submit">Удалить данные</button>
                             <input type="hidden" name="reviews" value="delete">
-                            <button class="btn btn-secondary"><a href="./admin.php" class="text-decoration-none text-reset">Вернуться</a></button>
+                            <button class="btn btn-secondary"><a href="./admin-reviews.php" class="text-decoration-none text-reset">Вернуться</a></button>
                         </form>
                     </div>
                 </div>

@@ -62,7 +62,7 @@ if (!array_key_exists('admin', $_SESSION)) {
                                 <span class="h4 mb-0">Отзывы</span>
                                 <button class="btn btn-warning ms-auto"><a href="./reviews-clear-approve.php" class="text-decoration-none text-reset" title='Удалить все отзывы со статусами "удалён"'>Почистить архив</a></button>
                             </div>
-                            <div class="card-body"><?php echo reviewsSort('на рассмотрении') ?></div>
+                            <div class="card-body"><?php echo reviewsSort('одобрен') ?></div>
 
                         </div>
                     </div>
@@ -72,7 +72,7 @@ if (!array_key_exists('admin', $_SESSION)) {
                                 <span class="h4 mb-0">Отзывы</span>
                                 <button class="btn btn-warning ms-auto"><a href="./reviews-clear-approve.php" class="text-decoration-none text-reset" title='Удалить все отзывы со статусами "удалён"'>Почистить архив</a></button>
                             </div>
-                            <div class="card-body"><?php echo reviewsSort('одобрен') ?></div>
+                            <div class="card-body"><?php echo reviewsSort('на рассмотрении') ?></div>
                         </div>
                     </div>
                     <div class="tab-pane fade" id="approved-app" role="tabpanel" tabindex="0">

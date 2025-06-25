@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: MySQL-8.2
--- Время создания: Июн 25 2025 г., 22:46
+-- Время создания: Июн 26 2025 г., 01:50
 -- Версия сервера: 8.2.0
 -- Версия PHP: 8.1.28
 
@@ -46,7 +46,8 @@ CREATE TABLE `applications` (
 
 INSERT INTO `applications` (`id_application`, `id_user`, `address`, `tel`, `status`, `date`, `serviceType`, `reason`, `payment`, `quantity`) VALUES
 (19, 14, 'awdawd', '+79581678587', 'в работе', '2025-05-31 03:07:00', 'Берёза', NULL, 'банковская карта', 2),
-(21, 15, 'Дачная 55', '+79009182652', 'в работе', '2025-06-27 01:50:00', 'Дуб', NULL, 'банковская карта', 8);
+(21, 15, 'Дачная 55', '+79009182652', 'в работе', '2025-06-27 01:50:00', 'Дуб', NULL, 'банковская карта', 8),
+(22, 6, 'Архангельская область, г. Северодвинск, ул. Макаренко, д. 16, к. 22', '+79009205567', 'в работе', '2025-06-27 03:24:00', 'Берёза', NULL, 'банковская карта', 2);
 
 -- --------------------------------------------------------
 
@@ -58,9 +59,23 @@ CREATE TABLE `reviews` (
   `id_reviews` int NOT NULL,
   `id_user` int NOT NULL,
   `text` text NOT NULL,
-  `status` varchar(255) NOT NULL DEFAULT 'На рассмотрении',
-  `name` varchar(255) NOT NULL
+  `status` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT 'на рассмотрении',
+  `mark` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Дамп данных таблицы `reviews`
+--
+
+INSERT INTO `reviews` (`id_reviews`, `id_user`, `text`, `status`, `mark`) VALUES
+(4, 14, 'Отличная компания!', 'одобрен', 5),
+(5, 15, 'Хорошая компания, заказывал берёзу, привезли быстро!', 'одобрен', 5),
+(6, 16, 'Мне понравилась компания, только бы чуток побыстрее!', 'одобрен', 4),
+(7, 17, 'Медленно, но всё хорошо.', 'одобрен', 3),
+(8, 18, '', 'одобрен', 5),
+(9, 19, 'Вполне хорошо!', 'одобрен', 4),
+(10, 20, 'На троечку потянет', 'одобрен', 3),
+(11, 21, 'Всё на высшем уровне! Ребята молодцы!', 'одобрен', 5);
 
 -- --------------------------------------------------------
 
@@ -89,7 +104,13 @@ INSERT INTO `users` (`id_user`, `login`, `password`, `tel`, `email`, `FIO`) VALU
 (12, 'ggsel22', 'a0f5b20694e4247d5bab10ffa573c417a86c1a1989b5d5a9d0b8ef439f7b4caf', '+79009182652', 'ggsel22@mail.ru', 'Даниил Дмитриевич Антонов'),
 (13, 'ggsel222', 'fbf6e04c950646054e0333f7a15345eefc7f411dd0bb3a436a12f4bca4592fdb', '+79581678582', 'ggsel222@mail.ru', 'Даниил '),
 (14, 'cybiran', '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8', '+79581678587', 'cybiran_ez@mail.ru', 'Даниил'),
-(15, 'user', '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8', '+79581638587', 'cybiran@mail.ru', 'ДАниил');
+(15, 'user', '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8', '+79581638587', 'cybiran@mail.ru', 'ДАниил'),
+(16, 'user2', '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8', '+79009023443', 'bafonoff@mail.ru', 'Бафонов Виктор Валерьевич'),
+(17, 'user3', '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8', '+79009132547', 'cybiran1234@mail.ru', 'Олегович Андрей Балконский'),
+(18, 'user4', '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8', '+79009009223', 'cyir@mail.ru', 'Коваленко Дмитрий Валентинович'),
+(19, 'user5', '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8', '+79675463733', 'kai@mail.ru', 'Манилов Виктор Алексеевич'),
+(20, 'user6', '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8', '+79009182555', 'kaiw@mail.ru', 'Конюхов Валентин Игоревич'),
+(21, 'user7', '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8', '+79009009900', 'keia@mail.ru', 'Брюхов Константин Семёнович');
 
 -- --------------------------------------------------------
 
@@ -150,19 +171,19 @@ ALTER TABLE `wood`
 -- AUTO_INCREMENT для таблицы `applications`
 --
 ALTER TABLE `applications`
-  MODIFY `id_application` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id_application` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT для таблицы `reviews`
 --
 ALTER TABLE `reviews`
-  MODIFY `id_reviews` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id_reviews` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_user` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT для таблицы `wood`
